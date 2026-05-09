@@ -1,0 +1,15 @@
+/fullstackopen/Part12_new/fs-container-fso$ docker run -it ubuntu bash
+
+Unable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+1c24335ddd46: Pull complete 
+6f5c5aa4e145: Pull complete 
+Digest: sha256:f3d28607ddd78734bb7f71f117f3c6706c666b8b76cbff7c9ff6e5718d46ff64
+Status: Downloaded newer image for ubuntu:latest
+root@6065bd6bbd03:/# mkdir /usr/src/app
+root@6065bd6bbd03:/# touch /usr/src/app/index.js
+root@6065bd6bbd03:/# cd /usr/src/app
+root@6065bd6bbd03:/usr/src/app# ls
+index.js
+root@6065bd6bbd03:/usr/src/app# exit
+exit
