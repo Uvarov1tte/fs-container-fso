@@ -2,7 +2,6 @@ const express = require('express');
 const { Todo } = require('../mongo')
 const router = express.Router();
 const redis = require('../redis');
-const redis = require('../redis');
 
 /* GET todos listing. */
 router.get('/', async (_, res) => {
