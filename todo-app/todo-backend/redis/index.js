@@ -17,11 +17,11 @@ if (!REDIS_URL) {
   })
 
   client.on('error', (err) => console.log('Redis Client Error', err))
-  
+
   client.connect().then(() => {
     console.log('Connected to Redis')
   })
-    
+
   get = (...args) => client.get(...args)
   set = (...args) => client.set(...args)
 }
