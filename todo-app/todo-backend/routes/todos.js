@@ -12,7 +12,7 @@ router.get('/', async (_, res) => {
 /* POST todo to listing. */
 router.post('/', async (req, res) => {
   if (!await redis.get("added_todos")) {
-    await redis.set("added_todos", 0)
+    await redis.set("added_todos", 1)
   } else {
     const added_todos = await redis.get("added_todos")
     await redis.set("added_todos", JSON.parse(added_todos) + 1)
