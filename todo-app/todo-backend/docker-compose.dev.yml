@@ -10,6 +10,11 @@ services:
     volumes:
     - ./mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
     - mongo_data:/data/db
+  redis:
+    image: redis:8.8-m03-alpine
+    ports:
+      - 6379:6379
+    restart: unless-stopped
 
 volumes:
   mongo_data:
