@@ -1,0 +1,22 @@
+docker exec -it bd bash
+
+root@bd8c3f12ce17:/data# redis-cli
+127.0.0.1:6379> KEYS added_todos
+1) "added_todos"
+127.0.0.1:6379> GET added_todos
+"0"
+127.0.0.1:6379> SET added_todos 9001
+OK
+127.0.0.1:6379> GET added_todos
+"9001"
+127.0.0.1:6379> GET added_todos
+"9002"
+127.0.0.1:6379> DEL added_todos
+(integer) 1
+127.0.0.1:6379> GET added_todos
+"0"
+127.0.0.1:6379> GET added_todos
+"1"
+127.0.0.1:6379> exit
+root@bd8c3f12ce17:/data# exit
+exit
