@@ -1,7 +1,7 @@
 node_modules/
 .env
 
-todo-app/redis_data/
+todo-app/todo-backend/redis_data/
 todo-app/todo-backend/mongo_data/
 
 # Playwright artifacts

@@ -15,6 +15,9 @@ services:
     ports:
       - 6379:6379
     restart: unless-stopped
+    command: ['redis-server', '--appendonly', 'yes'] # Overwrite the CMD
+    volumes: # Declare the volume
+      - ./redis_data:/data
 
 volumes:
   mongo_data:
