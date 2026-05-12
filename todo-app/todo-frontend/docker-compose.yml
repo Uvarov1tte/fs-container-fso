@@ -1,0 +1,6 @@
+services:
+  todo-frontend:           # The name of the service, can be anything
+    image: todo-frontend   # Declares which image to use
+    build: .              # Declares where to build if image is not found
+    ports:                # Declares the ports to publish
+      - 8000:80
