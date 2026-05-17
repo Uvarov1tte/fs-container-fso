@@ -6,8 +6,6 @@ services:
       dockerfile: ./dev.Dockerfile # This will simply tell which dockerfile to read
     volumes:
       - ./todo-frontend:/usr/src/app # The path can be relative, so ./ is enough to say "the same location as the docker-compose.yml"
-    ports:
-      - 5173:5173
     container_name: todo-frontend-dev # This will name the container hello-front-dev
     depends_on:
       - server
@@ -30,8 +28,6 @@ services:
       dockerfile: ./dev.Dockerfile # This will simply tell which dockerfile to read
     volumes:
       - ./todo-backend:/usr/src/app
-    ports:                # Declares the ports to publish
-      - 3000:3000
     environment: 
       - REDIS_URL=redis://redis:6379
       - MONGO_URL=mongodb://root:example@mongo:27017/the_database?authSource=admin
@@ -41,8 +37,6 @@ services:
     
   mongo:
     image: mongo
-    ports:
-      - 3456:27017
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
@@ -54,8 +48,6 @@ services:
     
   redis:
     image: redis:8.8-m03
-    ports:
-      - 6379:6379
     command: ['redis-server', '--appendonly', 'yes'] # Overwrite the CMD
     volumes: # Declare the volume
       - ./todo-backend/redis_data:/data
