@@ -6,8 +6,8 @@ const redis = require('../redis');
 let visits = 0
 
 router.get('/statistics', async (req, res) => {
-  let added_todos = await redis.get("added_todos")
-  let visits = await redis.get("visits")
+  let added_todos = JSON.parse(await redis.get("added_todos"))
+  let visits = JSON.parse(await redis.get("visits"))
 
   if (!added_todos) {
     await redis.set("added_todos", 0)
